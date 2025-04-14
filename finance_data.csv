@@ -1,2 +1,4 @@
 date,amount,category,description
-15-01-2025,100,Income,Salary
+15-01-2025,100.0,Income,Salary
+02-02-2025,1100.0,Income,freelance
+04-02-2025,350.0,Income,--------
