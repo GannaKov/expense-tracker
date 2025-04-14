@@ -102,6 +102,9 @@ def plot_transactions(df):
     plt.figure(figsize=(10, 5))
     plt.plot(income_df.index, income_df["amount"], label="Income", color="g")
     plt.plot(expenses_df.index, expenses_df["amount"], label="Expenses", color="r")
+
+    #income_df["amount"].plot(kind="bar", alpha=0.3, color="g", label="Total Incom")
+    #expenses_df["amount"].plot(kind="bar", alpha=0.3, color="r", label="Total Expenses")
     plt.xlabel("Date")
     plt.ylabel("Amount")
     plt.title("Income and Expenses Over Time")
@@ -124,6 +127,8 @@ def main():
             df = CSV.get_transactions(start_date, end_date)
             if input("Do you want to see a plot? (y/n) ").lower() == "y":
                plot_transactions(df)
+               print("Moment...")
+               continue
         elif choice == "3":
             print("Exiting...")
             break
