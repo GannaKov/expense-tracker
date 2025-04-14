@@ -1,4 +1,15 @@
 date,amount,category,description
-15-01-2025,100.0,Income,Salary
-02-02-2025,1100.0,Income,freelance
+01-01-2025,1100.0,Income,Salary
+05-01-2025,300.0,Expenses,Rent
+15-01-2025,2000.0,Income,Salary
+02-02-2025,1100.0,Income,Freelance
 04-02-2025,350.0,Income,--------
+14-02-2025,150.0,Expenses,Present
+07-03-2025,500.0,Income,Freelance
+10-03-2025,400.0,Expenses,Rent
+10-03-2025,400.0,Expenses,Supermarkt
+15-03-2025,2000.0,Income,Salary
+20-03-2025,200.0,Expenses,Supermarkt
+01-04-2025,400.0,Expenses,Rent
+12-04-2025,2000.0,Income,Salary
+13-04-2025,100.0,Expenses,Supermarkt
