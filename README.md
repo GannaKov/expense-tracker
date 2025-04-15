@@ -74,7 +74,7 @@ You can customize marker types, colors, and layout in `plot_transactions.py`.
 ```bash
 expense-tracker/
 │
-├── main.py # CLI menu and main loop
+├── main.py # CLI menu, CSV class, and add() function for user input
 ├── data_entry.py # Functions to get date, amount, category, etc.
 ├── plot_transactions.py # Matplotlib plot of income and expenses
 ├── finance_data.csv # Your saved transaction data
