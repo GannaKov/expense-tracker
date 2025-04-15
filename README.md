@@ -9,48 +9,15 @@ Includes visualizations of daily spending, bar charts, and summary statistics.
 
 ### 📊 Example chart
 
-_(Insert your chart image here)_  
 `images/plot.png`  
-![Chart](images/plot.png)
+![Chart](images/screenshots/plot.png)
 
 ### 💻 Terminal interaction
 
 _(Insert terminal screenshot if you'd like)_  
 `images/terminal.png`  
-![Terminal](images/terminal.png)
-
----
-
-## ✅ Features
-
-- Add income and expenses via CLI
-- View transactions within a custom date range
-- Summary of income, expenses, and net savings
-- Visualize transactions with matplotlib
-- CSV-based storage (no database required)
-
----
-
-## 🛠️ Technologies Used
-
-- Python 3.11+
-- pandas
-- matplotlib
-- CSV for local data persistence
-- Command Line Interface (CLI)
-
----
-
-## 📁 Project Structure
-
-expense-tracker/
-│
-├── main.py # CLI menu and main loop
-├── data_entry.py # Functions to get date, amount, category, etc.
-├── plot_transactions.py # Matplotlib plot of income and expenses
-├── finance_data.csv # Your saved transaction data
-├── images/ # Screenshots (optional)
-└── README.md # This file
+![Terminal](images/screenshots/terminal_1.png)
+![Terminal](images/screenshots/terminal_2.png)
 
 ---
 
@@ -60,25 +27,6 @@ expense-tracker/
 - **View transactions**: View all transactions in a specific date range along with a summary of total income, expenses, and net savings.
 - **Visualize data**: Option to view a plot of daily income and expenses, as well as a bar chart comparing total income and expenses.
 - **Data storage**: All transactions are saved in a CSV file (`finance_data.csv`), which can be opened in spreadsheet software.
-
----
-
-## 🗓️ Date Format
-
-All dates must be entered in the format:
-
-dd-mm-yyyy ✅ Example: `14-04-2025`
-
----
-
-## 📊 Output Example
-
-If you choose to view a plot, the app shows:
-
-- 📈 Line chart: Daily income and expenses
-- 📊 Bar chart: Total income vs. total expenses
-
-You can customize marker types, colors, and layout in `plot.py`.
 
 ---
 
@@ -105,6 +53,48 @@ You can customize marker types, colors, and layout in `plot.py`.
 
 ---
 
+## 🗓️ Date Format
+
+All dates must be entered in the format:
+
+dd-mm-yyyy ✅ Example: `14-04-2025`
+
+---
+
+## 📊 Output Example
+
+If you choose to view a plot, the app shows:
+
+- 📈 Line chart: Daily income and expenses
+- 📊 Bar chart: Total income vs. total expenses
+
+You can customize marker types, colors, and layout in `plot_transactions.py`.
+
+---
+
+## 📁 Project Structure
+
+expense-tracker/
+│
+├── main.py # CLI menu and main loop
+├── data_entry.py # Functions to get date, amount, category, etc.
+├── plot_transactions.py # Matplotlib plot of income and expenses
+├── finance_data.csv # Your saved transaction data
+├── images/screenshots (optional)
+└── README.md # This file
+
+---
+
+## 🛠️ Technologies Used
+
+- Python 3.11+
+- pandas
+- matplotlib
+- CSV for local data persistence
+- Command Line Interface (CLI)
+
+---
+
 ## 🧑‍💻 Requirements
 
 The following Python packages are required to run the application. They can be installed using pip:
@@ -126,8 +116,25 @@ six==1.17.0
 tzdata==2025.2
 ```
 
-You can also install all dependencies by running:
+---
+
+## 💾 Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/GannaKov/expense-tracker.git
+   cd expense-tracker
+```
+
+2. Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+3. Run the application:
+
+```bash
+python main.py
 ```
