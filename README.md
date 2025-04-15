@@ -9,13 +9,10 @@ Includes visualizations of daily spending, bar charts, and summary statistics.
 
 ### 📊 Example chart
 
-`images/plot.png`  
 ![Chart](images/screenshots/plot.png)
 
 ### 💻 Terminal interaction
 
-_(Insert terminal screenshot if you'd like)_  
-`images/terminal.png`  
 ![Terminal](images/screenshots/terminal_1.png)
 ![Terminal](images/screenshots/terminal_2.png)
 
@@ -74,6 +71,7 @@ You can customize marker types, colors, and layout in `plot_transactions.py`.
 
 ## 📁 Project Structure
 
+```bash
 expense-tracker/
 │
 ├── main.py # CLI menu and main loop
@@ -82,6 +80,7 @@ expense-tracker/
 ├── finance_data.csv # Your saved transaction data
 ├── images/screenshots (optional)
 └── README.md # This file
+```
 
 ---
 
