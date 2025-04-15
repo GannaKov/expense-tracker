@@ -102,6 +102,7 @@ def plot_transactions(df):
     )
 
     plt.figure(figsize=(10, 5))
+    plt.subplot(1,2,1)
     plt.plot(income_df.index, income_df["amount"], label="Income", color="g")
     plt.scatter(
         income_df[income_df["amount"] > 0].index,
@@ -119,15 +120,29 @@ def plot_transactions(df):
         color="r",
         marker="o"
     )
-
-    #income_df["amount"].plot(kind="bar", alpha=0.3, color="g", label="Total Incom")
-    #expenses_df["amount"].plot(kind="bar", alpha=0.3, color="r", label="Total Expenses")
+    
     plt.xlabel("Date")
     plt.ylabel("Amount")
     plt.title("Income and Expenses Over Time")
     plt.legend()
     plt.grid(True)
+    
+    # ---- 2------
+    plt.subplot(1,2,2)
+    total_expenses = df[df["category"] == "Expenses"]["amount"].sum()
+    total_income = df[df["category"] == "Income"]["amount"].sum()
+    labels = ["Income", "Expenses"]
+    values = [total_income, total_expenses]
+    colors = ["green", "red"]
+    plt.bar(labels, values, color=colors)
+    plt.title("Total Income vs Expenses")
+    plt.ylabel("Amount")
+    plt.grid(axis="y", linestyle="--", alpha=0.5)
     plt.show()
+  
+   
+    
+    
 #01-01-2025 
 #14-04-2025
 def main():
