@@ -84,24 +84,41 @@ def add():
     CSV.add_entry(date, amount, category, description) 
 
 def plot_transactions(df):
+    df["date"] = pd.to_datetime(df["date"])  # transform date column to datetime
+    df = df.sort_values("date")              # sort by date
     df.set_index("date", inplace=True)
 
     income_df = (
         df[df["category"] == "Income"]
         .resample("D")
         .sum()
-        .reindex(df.index, fill_value=0)
+        #.reindex(df.index, fill_value=0)
     )
     expenses_df = (
         df[df["category"] == "Expenses"]
         .resample("D")
         .sum()
-        .reindex(df.index, fill_value=0)
+        #.reindex(df.index, fill_value=0)
     )
 
     plt.figure(figsize=(10, 5))
     plt.plot(income_df.index, income_df["amount"], label="Income", color="g")
-    plt.plot(expenses_df.index, expenses_df["amount"], label="Expenses", color="r")
+    plt.scatter(
+        income_df[income_df["amount"] > 0].index,
+        income_df[income_df["amount"] > 0]["amount"],
+        color="g",
+        #marker="o"
+        marker = '*',
+        s=100,  # Size of the marker
+       
+    )
+    plt.plot(expenses_df.index, expenses_df["amount"], label="Expenses", color="r", linestyle="--")
+    plt.scatter(
+        expenses_df[expenses_df["amount"] > 0].index,
+        expenses_df[expenses_df["amount"] > 0]["amount"],
+        color="r",
+        marker="o"
+    )
 
     #income_df["amount"].plot(kind="bar", alpha=0.3, color="g", label="Total Incom")
     #expenses_df["amount"].plot(kind="bar", alpha=0.3, color="r", label="Total Expenses")
@@ -111,7 +128,8 @@ def plot_transactions(df):
     plt.legend()
     plt.grid(True)
     plt.show()
-
+#01-01-2025 
+#14-04-2025
 def main():
     while True:
         print("\n1. Add a new transaction")
